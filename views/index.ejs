@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="/style.css"/>
+<script type="text/javascript" src="/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/mustache.js"></script>
+<script type="text/template" id="housetablerow">
+  <tr>
+    <td class="zillowpic"><img src="{{{zillowpic}}}"/></td>
+    <td class="house_number">{{{house_number}}}</td>
+    <td class="street">{{{street}}}</td>
+    <td class="city">{{{city}}}</td>
+    <td class="zip">{{{zip}}}</td>
+    <td class="zillow"><a href="{{{zillowlink}}}"><img src="/zillow_icon.gif"/></a></td>
+</td>
+  </tr>
+</script>
+<script type="text/javascript">
+
+$.ajax({
+    url: "/ajax/houses",
+    type: "GET",
+    dataType: "json",
+    success: function(houses){
+      $(document).ready(function() {
+        var i;
+        $('#nhouses').text(houses.length);
+        for (i=0; i<houses.length; ++i) {
+          $('table#houselist').append($(Mustache.render($('#housetablerow').text(), houses[i])));
+        }
+      })
+    }
+})
+
+</script>
+</head>
+<body>
+   <div class="header">
+     <div class="user">
+       <div class="email"><%= user.emails[0].value %></div>
+       <div class="logout"><a href="/logout">logout</a></div>
+     </div>
+   </div>
+
+   <table id="houselist">
+     <tr class="tableheader">
+       <td class="zillowpic"></td>  
+       <td class="house_number">Number</td>  
+       <td class="street">Street</td>  
+       <td class="city">City</td>    
+       <td class="zip">Zip</td>     
+       <td class="zip">Zillow</td>
+     </tr>
+   <table>
+</body>
+</html>

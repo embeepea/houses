@@ -1,0 +1,5 @@
+db.houses.remove();
+db.houses.save({"house_number":"1","street":"Woodley Ave","city":"Asheville","zip":"28804","zillowlink":"http://www.zillow.com/homedetails/1-Woodley-Ave-Asheville-NC-28804/5614593_zpid", "zillowpic" : "http://photos2.zillow.com/p_d/IStoaduevfgwxo1000000000.jpg"});
+db.houses.save({"house_number":"255","street":"Cumberland Ave","city":"Asheville","zip":"28801","zillowlink":"http://www.zillow.com/homedetails/255-Cumberland-Ave-Asheville-NC-28801/5615815_zpid", "zillowpic" : "http://photos3.zillow.com/p_d/ISx3tcjjgn58tr0000000000.jpg"});
+db.houses.save({"house_number":"52","street":"Edwin Pl","city":"Asheville","zip":"28801","zillowlink":"http://www.zillow.com/homedetails/52-Edwin-Pl-Asheville-NC-28801/5615353_zpid", "zillowpic" : "http://photos3.zillow.com/p_d/IShbsczkx2nxtc0000000000.jpg"});
+db.houses.save({"house_number":"52","street":"Lawrence Pl","city":"Asheville","zip":"28801","zillowlink":"http://www.zillow.com/homedetails/52-Lawrence-Pl-Asheville-NC-28801/5615400_zpid", "zillowpic" : "http://photos3.zillow.com/p_d/IStk70z9tnyabc0000000000.jpg"});
