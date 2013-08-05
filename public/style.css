@@ -1,3 +1,15 @@
+div.row.odd {
+  background: #dddddd;
+}
+div.row.even {
+  background: #ffffff;
+}
+img.zillowpic {
+  width: 200px;
+  margin: auto;
+}
+
+/*
 table#houselist td.house_number {
   text-align: right;
   padding-right: 10px;
@@ -52,3 +64,4 @@ div.header div.user div.logout {
   width: 120px;
   height: 100px;
 }
+*/

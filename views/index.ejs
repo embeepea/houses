@@ -7,15 +7,16 @@
 <script type="text/javascript" src="/bs/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/mustache.js"></script>
 <script type="text/template" id="housetablerow">
-  <tr>
-    <td class="zillowpic"><img src="{{{zillowpic}}}"/></td>
-    <td class="house_number">{{{house_number}}}</td>
-    <td class="street">{{{street}}}</td>
-    <td class="city">{{{city}}}</td>
-    <td class="zip">{{{zip}}}</td>
-    <td class="zillow"><a href="{{{zillowlink}}}"><img src="/zillow_icon.gif"/></a></td>
-</td>
-  </tr>
+  <div class="row {{{parity}}}">
+    <div class="col-lg-3"><img class="zillowpic" src="{{{zillowpic}}}"/></div>
+    <div class="col-lg-9">
+      {{{house_number}}} {{{street}}}
+      <br>
+      {{{city}}} {{{zip}}}
+      <br>
+      <a href="{{{zillowlink}}}"><img src="/zillow_icon.gif"/> Zillow</a>
+    </div>
+  </div>
 </script>
 <script type="text/javascript">
 
@@ -28,7 +29,8 @@ $.ajax({
         var i;
         $('#nhouses').text(houses.length);
         for (i=0; i<houses.length; ++i) {
-          $('table#houselist').append($(Mustache.render($('#housetablerow').text(), houses[i])));
+          houses[i].parity = (i % 2 === 0) ? "even" : "odd";
+          $('#houselist').append($(Mustache.render($('#housetablerow').text(), houses[i])));
         }
       })
     }
@@ -55,16 +57,8 @@ $.ajax({
       </li>
     </ul>
   </div>
+
+  <div id="houselist"></div>
   
-   <table id="houselist">
-     <tr class="tableheader">
-       <td class="zillowpic"></td>  
-       <td class="house_number">Number</td>  
-       <td class="street">Street</td>  
-       <td class="city">City</td>    
-       <td class="zip">Zip</td>     
-       <td class="zip">Zillow</td>
-     </tr>
-   <table>
 </body>
 </html>
