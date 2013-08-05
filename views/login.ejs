@@ -2,14 +2,19 @@
 <html>
 <head>
 <link type="text/css" rel="stylesheet" href="/style.css"/>
+<link type="text/css" rel="stylesheet" href="/bs/dist/css/bootstrap.min.css"/>
 <script type="text/javascript" src="/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/bs/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/mustache.js"></script>
 </head>
 <body>
-   <div class="header">
-     <div class="user">
-       <div class="login"><a href="/auth/google">login</a></div>
-     </div>
-   </div>
+
+  <div class="navbar">
+    <a class="navbar-brand" href="#">Houses</a>
+    <ul class="nav navbar-nav pull-right">
+      <li><a href="/auth/google">Login</a></li>
+    </ul>
+  </div>
+  
 </body>
 </html>

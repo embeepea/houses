@@ -2,7 +2,9 @@
 <html>
 <head>
 <link type="text/css" rel="stylesheet" href="/style.css"/>
+<link type="text/css" rel="stylesheet" href="/bs/dist/css/bootstrap.min.css"/>
 <script type="text/javascript" src="/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/bs/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/mustache.js"></script>
 <script type="text/template" id="housetablerow">
   <tr>
@@ -35,13 +37,25 @@ $.ajax({
 </script>
 </head>
 <body>
-   <div class="header">
-     <div class="user">
-       <div class="email"><%= user.emails[0].value %></div>
-       <div class="logout"><a href="/logout">logout</a></div>
-     </div>
-   </div>
 
+  <div class="navbar">
+    <a class="navbar-brand" href="#">Houses</a>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">List</a></li>
+      <li><a href="#">Map</a></li>
+      <li><a href="#">Add</a></li>
+      <li><a href="#">Filter</a></li>
+    </ul>
+    <ul class="nav navbar-nav pull-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= user.emails[0].value %> <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  
    <table id="houselist">
      <tr class="tableheader">
        <td class="zillowpic"></td>  
