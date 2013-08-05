@@ -9,6 +9,14 @@ img.zillowpic {
   margin: auto;
 }
 
+#houselist .row {
+  padding-left: 15px;
+}
+#houselist .row .col {
+  padding-left: 10px;
+  padding: 10px;
+}
+
 /*
 table#houselist td.house_number {
   text-align: right;

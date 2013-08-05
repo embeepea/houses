@@ -90,6 +90,22 @@ app.get('/', ensureAuthenticated, function(req, res){
   });
 });
 
+app.get('/add', ensureAuthenticated, function(req, res){
+    res.render('add', { user: req.user });
+});
+
+app.post('/add', ensureAuthenticated, function(req, res) {
+  var house = {
+    "house_number": req.body.number,
+    "street": req.body.street,
+    "city": req.body.city,
+    "zip": req.body.zip,
+    "zillowlink": req.body.zillow
+  };
+  db.houses.save(house);
+  res.redirect('/');
+});
+
 app.get('/account', ensureAuthenticated, function(req, res){
   res.render('account', { user: req.user });
 });

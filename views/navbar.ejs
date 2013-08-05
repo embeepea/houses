@@ -1,10 +1,10 @@
   <div class="navbar">
-    <a class="navbar-brand" href="#">Houses</a>
+    <a class="navbar-brand" href="/">Houses</a>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">List</a></li>
-      <li><a href="#">Map</a></li>
-      <li><a href="#">Add</a></li>
-      <li><a href="#">Filter</a></li>
+      <li id="menu-item-list"><a href="/">List</a></li>
+      <li id="menu-item-map"><a href="#">Map</a></li>
+      <li id="menu-item-add"><a href="/add">Add</a></li>
+      <li id="menu-item-filter"><a href="#">Filter</a></li>
     </ul>
     <ul class="nav navbar-nav pull-right">
       <li class="dropdown">
@@ -15,3 +15,11 @@
       </li>
     </ul>
   </div>
+<script type="text/javascript">
+function setActiveMenuItem(name) {
+  $(document).ready(function() {
+    $("div.navbar ul.nav li").removeClass("active");  
+    $("div.navbar ul.nav li#menu-item-"+name).addClass("active");  
+  });
+}
+</script>

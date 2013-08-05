@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include common-head %>
+</head>
+<body>
+  <div class="container">
+    <% include navbar %>
+
+    <form action="/add" method="POST">
+      <h2>Add a House</h2>
+
+      <fieldset>
+        <legend>Location</legend>
+        <div class="row">
+          <div class="col-2 form-group">
+            <label for="number">Number</label>
+            <input type="text" class="form-control" name="number" placeholder="99999">
+          </div>
+
+          <div class="col-10 form-group">
+            <label for="street">Street</label>
+            <input type="text" class="form-control" name="street" placeholder="Main St">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2 form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" name="city" value="Asheville">
+          </div>
+
+          <div class="col-2 form-group">
+            <label for="zip">Zip</label>
+            <input type="text" class="form-control" name="zip" placeholder="28801">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Links</legend>
+        <div class="form-group">
+          <label for="zillow">Zillow</label>
+          <input class="form-control" type="text" name="zillow" placeholder="paste zillow link here">
+        </div>
+      </fieldset>
+<hr>
+      <button class="btn col-2 btn-primary" type="submit" name="submit">Add House</button>
+
+    </form>
+
+  </div>
+</body>
+<script type="text/javascript">setActiveMenuItem("add");</script>
+</html>
