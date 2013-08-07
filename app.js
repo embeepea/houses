@@ -3,6 +3,7 @@ var express = require('express')
   , util = require('util')
   , GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
   , credentials = require('./credentials')
+  , $ = require('jquery').create()
   ;
 
 var databaseUrl = "test";
@@ -94,6 +95,23 @@ app.get('/add', ensureAuthenticated, function(req, res){
     res.render('add', { user: req.user });
 });
 
+function scrape(url, scraper_func) {
+    // scraper_func will be passed a single arg, which is the jquery object
+    // corresponding to the returned page
+    $.ajax({
+        url: url,
+        dataType: "text",
+        success: function(data) {
+            scraper_func($(data));
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus);
+            console.log(jqXHR);
+            console.log(errorThrown);
+        }
+    });
+}
+
 app.post('/add', ensureAuthenticated, function(req, res) {
   var house = {
     "house_number": req.body.number,
@@ -102,7 +120,17 @@ app.post('/add', ensureAuthenticated, function(req, res) {
     "zip": req.body.zip,
     "zillowlink": req.body.zillow
   };
-  db.houses.save(house);
+  db.houses.save(house, function(err, value) {
+      scrape(value.zillowlink, function ($page) {
+          var photoUrl = $page.find("a.show-lightbox img.hip-photo").attr('src');
+          console.log('updated photo url to: ' + photoUrl);
+          db.houses.findAndModify({
+              query: { '_id': value._id },
+              update: { $set: { zillowpic:photoUrl } },
+              new: true
+          });
+      });
+  });
   res.redirect('/');
 });
 
