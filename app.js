@@ -8,6 +8,7 @@ var express = require('express')
 
 var databaseUrl = "test";
 var collections = ["users", "houses"];
+var mongodb = require('mongodb');
 var db = require("mongojs").connect(databaseUrl, collections);
 
 // API Access link for creating client ID and secret:
@@ -93,6 +94,16 @@ app.get('/', ensureAuthenticated, function(req, res){
 
 app.get('/add', ensureAuthenticated, function(req, res){
     res.render('add', { user: req.user });
+});
+
+app.get('/zillowpic/:id', ensureAuthenticated, function(req, res){
+  db.houses.find({'_id' : mongodb.ObjectID(req.params.id)}, function(err, houses) {
+    if (houses && houses.length > 0 && houses[0].zillowpic) {
+        res.send(houses[0].zillowpic);
+    } else {
+        res.send('');
+    }
+  });
 });
 
 function scrape(url, scraper_func) {

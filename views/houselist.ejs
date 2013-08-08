@@ -1,6 +1,6 @@
 <div id="houselist"></div>
 <script type="text/template" id="housetablerow">
-  <div class="row {{{parity}}}">
+  <div class="row {{{parity}}}" data-id="{{{_id}}}">
     <div class="col col-lg-3"><img class="zillowpic" src="{{{zillowpic}}}"/></div>
     <div class="col col-lg-9">
       {{{house_number}}} {{{street}}}
@@ -11,20 +11,4 @@
     </div>
   </div>
 </script>
-<script type="text/javascript">
-  $.ajax({
-      url: "/ajax/houses",
-      type: "GET",
-      dataType: "json",
-      success: function(houses){
-        $(document).ready(function() {
-          var i;
-          $('#nhouses').text(houses.length);
-          for (i=0; i<houses.length; ++i) {
-            houses[i].parity = (i % 2 === 0) ? "even" : "odd";
-            $('#houselist').append($(Mustache.render($('#housetablerow').text(), houses[i])));
-          }
-        })
-      }
-  })
-</script>
+<script type="text/javascript" src="/houselist.js"></script>
