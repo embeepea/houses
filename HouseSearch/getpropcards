@@ -6,9 +6,9 @@
 
 import re, os
 
-with open('parcels.csv', 'r') as f:
+with open('montford.csv', 'r') as f:
     for line in f.readlines():
         fields = line.split("|")
         if len(fields) > 2:
             pin = fields[1]
-            os.system("wget -O propcards/%s.html 'http://www.buncombetax.org/GIS.aspx?type=card&pin=%s'" % (pin,pin))
+            os.system("wget -O montford-propcards/%s.html 'http://www.buncombetax.org/GIS.aspx?type=card&pin=%s'" % (pin,pin))
