@@ -1,9 +1,7 @@
-var databaseUrl = "test";
-var collections = ["users", "houses"];
-var mongodb = require('mongodb');
-var db = require("mongojs").connect(databaseUrl, collections);
-var fs = require('fs');
+#! /usr/local/bin/node
 
-db.houses.find({'_id' : mongodb.ObjectID('51fc208d69d530d467d8076f')}, function(err, houses) {
-  console.log(houses);
-});
+sprintf = require('sprintf').sprintf;
+
+console.log( sprintf("hey: %3.2f", 3.1415927) );
+
+
