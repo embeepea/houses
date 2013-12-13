@@ -57,7 +57,9 @@ passport.use(new GoogleStrategy({
 
 function validate_user(user) {
   if (user && user.emails && (user.emails[0].value === 'mbp@geomtech.com'
-                              || user.emails[0].value === 'andrea.fey@gmail.com')) {
+                              || user.emails[0].value === 'andrea.fey@gmail.com'
+                              || user.emails[0].value === 'jrfrimme@unca.edu'
+                             )) {
       return true;
   } else {
       return false;
