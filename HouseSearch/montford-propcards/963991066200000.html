@@ -1,0 +1,403 @@
+
+
+<html>
+<head id="Head1"><title>
+	Buncombe County Tax Lookup - Property Card
+</title><link href="http://template.buncombecounty.org/bcGreen/css/global.css" rel="stylesheet" type="text/css" media="all" /><link href="http://template.buncombecounty.org/bcGreen/css/gov.css" rel="stylesheet" type="text/css" media="all" /><link href="http://template.buncombecounty.org/bcGreen/css/col1.css" rel="stylesheet" type="text/css" media="all" /><link href="http://template.buncombecounty.org/bcGreen/css/print.css" media="print" rel="stylesheet" type="text/css" /><link href="css/local.css" rel="stylesheet" type="text/css" /> 
+    <script type="text/javascript" src="js/Submit.js"></script>
+    
+    <script type="text/javascript" src="js/wz_jsgraphics.js"></script>
+    <script type="text/javascript" src="js/SketchVars.js"></script>
+    <script type="text/javascript" src="js/BldgSketch.js"></script>
+    <script type="text/javascript" src="js/Sketch.js"></script>
+	<script type="text/javascript" src="js/MultiDimensionalArray.js"></script>
+	
+    <script type="text/javascript" src="http://template.buncombecounty.org/js/jquery.js"></script>
+    <script type="text/javascript" src="http://template.buncombecounty.org/js/thickbox.js"></script>
+    <link rel="stylesheet" href="http://template.buncombecounty.org/bc/css/thickbox.css" type="text/css" media="screen" />
+    <style type="text/css">
+        body {background-color: #fff}
+        th {background-color: #D9DDE9}
+        img#imgThumb {float:right; padding:0 5% 0 0}
+    </style>
+</head>
+
+<body>
+<form name="form1" method="post" action="PropertyCard.aspx" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPaA8FDzhkMDc5ZjUwYmEwMzZiYxgIBQ5ndk93bmVySGlzdG9yeQ88KwAMAwYVBQhzQWNjb3VudAxzQWNjb3VudFR5cGUJRGVlZF9Cb29rCURlZWRfUGFnZQlEZWVkX0RhdGUHFCsAARQrAAUCn5DnAwUBUgUEMTQ0MQUEMDM0OQUVOC8xNS8xOTg2IDEyOjAwOjAwIEFNCAIBZAUeZ3ZPd25lckhpc3RvcnkkY3RsMDIkZ3ZfU25hbWVzDzwrAAwBCAIBZAUTZ3ZBc3Nlc3NtZW50SGlzdG9yeQ88KwAMAQgCAWQFDmd2T3RoZXJJbXByb3ZlD2dkBRpyZXBSZXMkY3RsMDAkZ3ZSZXNTZWN0aW9ucw88KwAMAQgCAWQFHXJlcFJlcyRjdGwwMCRndlJlc1JlZmluZW1lbnRzDzwrAAwBCAIBZAUKZ3ZMYW5kRGF0YQ88KwAMAQgCAWQFGnJlcFJlcyRjdGwwMCRndlJlc0J1aWx0SW5zDzwrAAwBCAIBZA==" />
+
+<table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+<tr>
+    <td>
+    
+    <table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+	    <tr>
+	        <td>
+	            <img alt="Buncombe County Seal" src="http://template.buncombecounty.org/img/Seal_Color_100.gif" />
+	        </td>
+	        <td class="textCenter">
+	            <img id="imgThumb" src="" alt="Property Photo" border="0" />
+	            <h1>County of Buncombe, North Carolina</h1>
+	            <strong>
+	                Web Property Record Card<br />
+	                <span id="lblPIN">9639-91-0662-00000</span>
+	            </strong>
+	        </td>
+	    </tr>
+        <tr>
+            <td class="textRight" colspan="2">
+                
+                Date Printed: <span id="lblDatePrinted">9/7/2013</span>
+            </td>
+        </tr>
+    </table>
+    <br />
+
+    <table border="1" width="100%" align="center" cellpadding="0" cellspacing="0">
+	    <tr>
+		    <td class="vertTop">
+                <table border="0" rules="none" frame="below" width="100%" align="center" cellpadding="0" cellspacing="0">
+	                <tr>
+		                <th colspan="2" class="textLeft">Owner Information</th>
+	                </tr>
+	                <tr>
+	                    <td class="vertTop"><br />Owners:</td>
+	                    <td><br />
+                            <span id="lblOwners">CLINTON WILLIAMS  </span>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>Address:</td>
+	                    <td><span id="lblAddress1"></span></td>
+	                </tr>
+	                <tr>
+	                    <td></td>
+	                    <td><span id="lblAddress2">PO BOX 255</span></td>
+	                </tr>
+	                <tr>
+	                    <td></td>
+	                    <td><span id="lblAddress3">ASHEVILLE NC 28802</span></td>
+	                </tr>
+	                <tr>
+	                    <td>Property Location:</td>
+	                    <td><span id="lblSitus">202 COURTLAND PL</span></td>
+	                </tr>
+	                <tr>
+		                <th colspan="2" class="textLeft">Taxing Districts</th>
+	                </tr>
+	                <tr>
+	                    <td>County:</td>
+	                    <td>Buncombe County</td>
+	                </tr>
+	                <tr>
+	                    <td>City:</td>
+	                    <td><span id="lblDistCity">City of Asheville</span></td>
+	                </tr>
+	                <tr>
+	                    <td>Fire:</td>
+	                    <td><span id="lblDistFire"></span></td>
+	                </tr>
+	                <tr>
+	                    <td>School:</td>
+	                    <td><span id="lblDistSchl">ASHEVILLE SCH.           </span></td>
+	                </tr>
+                    <tr>
+	                    <td>Authority:</td>
+	                    <td><span id="lblDistCRA">CULTURE/RECREATION</span></td>
+	                </tr>
+                </table>
+            </td>
+            <td>
+                <table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+	            <tr>
+		            <th class="textLeft">Parcel Information</th>
+		            <th class="textRight"><span style="color:#000;"> Total Property Value: <span id="lblTotalVal">187,900</span></span></th>
+	            </tr>
+                <tr>
+                    <td>Status:</td>
+                    <td><span id="lblActiveFlag">Active</span></td>
+                </tr>
+                <tr>
+                    <td>Account:</td>
+                    <td><span id="lblAccount">8230745</span></td>
+                </tr>
+                <tr>
+                    <td>Deed Date:</td>
+                    <td><span id="lblDeedDate">8/15/1986</span></td>
+                </tr>
+                <tr>
+                    <td>Deed Book/Page:</td>
+                    <td><a id="hlDeedBookPage" href="http://registerofdeeds.buncombecounty.org/external/LandRecords/protected/v4/SrchBookPage.aspx?bAutoSearch=true&amp;bk=1441&amp;pg=349&amp;idx=DEE" target="_blank">1441 / 0349</a></td>
+                </tr>
+                <tr>
+                    <td>Plat Book/Page:</td>
+                    <td><a id="hlPlatBookPage" href="http://registerofdeeds.buncombecounty.org/external/LandRecords/protected/v4/SrchBookPage.aspx?bAutoSearch=true&amp;bk=7&amp;pg=94&amp;idx=ALL" target="_blank">0007 / 0094</a></td>
+                </tr>
+                <tr>
+                    <td>Legal Reference:</td>
+                    <td><span id="lblLegalRef">MICRODATA REFERENCE</span></td>
+                </tr>
+                <tr>
+                    <td>Location:</td>
+                    <td><span id="lblLocation">202 COURTLAND PL</span></td>
+                </tr>
+                <tr>
+                    <td>Class:</td>
+                    <td><span id="lblClass">RESIDENTIAL</span></td>
+                </tr>
+                <tr>
+                    <td>Neighborhood:</td>
+                    <td><span id="lblNeighborhood">HISTORIC MONTFORD</span></td>
+                </tr>
+                <tr>
+                    <td>Subdivision:</td>
+                    <td><span id="lblSubdivision">COURTLAND PL</span></td>
+                </tr>
+                <tr>
+                    <td>Sub Lot:</td>
+                    <td><span id="lblSubLot">PT 20 & 21 & ALL LTS 22-24</span></td>
+                </tr>
+                <tr>
+                    <td>Zoning:</td>
+                    <td><span id="lblZoning"></span></td>
+                </tr>
+                <tr>
+                    <td>Conservation/Easement:</td>
+                    <td><span id="lblConsEase">N</span></td>
+                </tr>
+                <tr>
+                    <td>Flood:</td>
+                    <td><span id="lblFlood"> </span></td>
+                </tr>
+            </table>
+            </td>
+        </tr>
+    </table>
+    </td>
+</tr>
+</table>
+
+
+
+
+<h2 class="textCenter" style="background-color:#D9DDE9">Ownership History</h2>
+<div>
+	<table class="TableStyle" cellspacing="0" rules="all" border="1" id="gvOwnerHistory">
+		<tr class="table_header">
+			<th scope="col">Transfer Date</th><th scope="col">Price</th><th scope="col">Legal Reference</th><th scope="col">Deed Book/Page</th><th scope="col">Qualified</th><th scope="col">Vacant When Sold</th><th scope="col">Account</th><th scope="col">Seller Names</th>
+		</tr><tr class="TableRowStyle">
+			<td>08/15/86</td><td>$5,500</td><td>MICRODATA REFERENCE</td><td><a href="http://registerofdeeds.buncombecounty.org/external/LandRecords/protected/v4/SrchBookPage.aspx?bAutoSearch=true&amp;bk=1441&amp;pg=349&amp;idx=DEE" target="_blank">1441 / 0349</a></td><td>Yes</td><td>No</td><td>7981087</td><td>
+                <div>
+				<table cellspacing="0" border="0" id="gvOwnerHistory_ctl02_gv_Snames">
+					<tr>
+						<td>WILLIAMS CLINTON </td>
+					</tr><tr>
+						<td>CLEMENT MARY </td>
+					</tr>
+				</table>
+			</div>
+            </td>
+		</tr>
+	</table>
+</div>
+
+<h2 class="textCenter" style="background-color:#D9DDE9">Assessment History</h2>
+<div>
+	<table class="TableStyle" cellspacing="0" rules="all" border="1" id="gvAssessmentHistory">
+		<tr>
+			<th scope="col">Year</th><th scope="col">Account</th><th scope="col">Acres</th><th scope="col">Land</th><th scope="col">Bldgs</th><th scope="col">Other Impr</th><th scope="col">Assessed</th><th scope="col">Desc</th><th scope="col">Exemptions</th><th scope="col">Deferred</th><th scope="col">Taxable</th>
+		</tr><tr class="TableRowStyle">
+			<td>2013</td><td>8230745</td><td>0.28</td><td>57,900</td><td>130,000</td><td>0</td><td>187,900</td><td>&nbsp;</td><td>0</td><td>0</td><td>187,900</td>
+		</tr><tr class="TableAlternatingRowStyle">
+			<td>2012</td><td>8230745</td><td>0.28</td><td>51,200</td><td>113,900</td><td>0</td><td>165,100</td><td>&nbsp;</td><td>0</td><td>0</td><td>165,100</td>
+		</tr><tr class="TableRowStyle">
+			<td>2011</td><td>8230745</td><td>0.28</td><td>51,200</td><td>113,900</td><td>0</td><td>165,100</td><td>&nbsp;</td><td>0</td><td>0</td><td>165,100</td>
+		</tr><tr class="TableAlternatingRowStyle">
+			<td>2010</td><td>8230745</td><td>0.28</td><td>51,200</td><td>113,900</td><td>0</td><td>165,100</td><td>&nbsp;</td><td>0</td><td>0</td><td>165,100</td>
+		</tr><tr class="TableRowStyle">
+			<td>2009</td><td>8230745</td><td>0.28</td><td>51,200</td><td>113,900</td><td>0</td><td>165,100</td><td>&nbsp;</td><td>0</td><td>0</td><td>165,100</td>
+		</tr><tr class="TableAlternatingRowStyle">
+			<td>2008</td><td>7981087</td><td>0.28</td><td>51,200</td><td>113,900</td><td>0</td><td>165,100</td><td>&nbsp;</td><td>0</td><td>0</td><td>165,100</td>
+		</tr><tr class="TableRowStyle">
+			<td>2007</td><td>7981087</td><td>0.28</td><td>51,200</td><td>113,900</td><td>0</td><td>165,100</td><td>&nbsp;</td><td>0</td><td>0</td><td>165,100</td>
+		</tr><tr class="TableAlternatingRowStyle">
+			<td>2006</td><td>7981087</td><td>0.28</td><td>51,200</td><td>113,900</td><td>0</td><td>165,100</td><td>&nbsp;</td><td>0</td><td>0</td><td>165,100</td>
+		</tr><tr class="TableRowStyle">
+			<td>2005</td><td>7981087</td><td>0.28</td><td>13,200</td><td>0</td><td>0</td><td>13,200</td><td>&nbsp;</td><td>0</td><td>0</td><td>13,200</td>
+		</tr><tr class="TableAlternatingRowStyle">
+			<td>2004</td><td>7981087</td><td>0.28</td><td>13,200</td><td>0</td><td>0</td><td>13,200</td><td>&nbsp;</td><td>0</td><td>0</td><td>13,200</td>
+		</tr><tr class="TableRowStyle">
+			<td>2003</td><td>7981087</td><td>0.28</td><td>13,200</td><td>0</td><td>0</td><td>13,200</td><td>&nbsp;</td><td>0</td><td>0</td><td>13,200</td>
+		</tr><tr class="TableAlternatingRowStyle">
+			<td>2002</td><td>7981087</td><td>0.28</td><td>13,200</td><td>0</td><td>0</td><td>13,200</td><td>&nbsp;</td><td>0</td><td>0</td><td>13,200</td>
+		</tr><tr class="TableRowStyle">
+			<td>2001</td><td>7981087</td><td>0.28</td><td>7,900</td><td>0</td><td>0</td><td>7,900</td><td>&nbsp;</td><td>0</td><td>0</td><td>7,900</td>
+		</tr>
+	</table>
+</div> 
+
+<table border="1" width="100%" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+		<td class="vertTop">
+            <div class="inline floatLeft" style="width: 33%">Land Data</div>
+            <div class="inline floatLeft" style="width: 33%">Total Acres: <span id="lblAcres">0.28 Acres                    </span></div>
+            <div class="inline floatLeft textRight" style="width: 33%"> Land Value: <span id="lblLandValue">57,900</span></div>
+            <br />
+            <div>
+	<table class="TableStyle" cellspacing="0" rules="all" border="1" id="gvLandData">
+		<tr>
+			<th scope="col">Segment#</th><th scope="col">Units</th><th scope="col">Description</th>
+		</tr><tr class="TableRowStyle">
+			<td>1</td><td>0.28 Acres                    </td><td>LOT</td>
+		</tr>
+	</table>
+</div>
+        </td>
+        <td class="vertTop">
+            <div class="inline floatLeft" style="width: 50%">Other Improvements</div>
+            <div class="inline floatLeft textRight" style="width: 50%"><span id="lblTaxYear_Other"></span> Value: <span id="lblImproveValue">0</span></div>
+            <br />
+            <div>
+
+</div>
+        </td>
+    </tr>
+</table>
+
+ 
+<div id="pnlResBldg">
+	
+    
+    <table border="0" rules="none" frame="box" width="100%" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <th class="textCenter" colspan="6">Building Structures</th>
+            <th class="textRight" colspan="3">&nbsp;</th>
+        </tr>
+        <tr>
+            <th class="textLeft">Res. Building ID</th>
+            <th class="textLeft">Style</th>
+            <th class="textLeft">Sq Feet</th>
+            <th class="textLeft">Bsmt SqFt</th>
+            <th class="textLeft">Bsmt Finished</th>
+            <th class="textLeft">Year Built</th>
+            <th class="textLeft">Grade</th>
+            <th class="textLeft">Condition</th>
+            <th class="textLeft"><span id="repRes_ctl00_lblResBuildingValue">Value</span></th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>MODULAR</td>
+            <td>1680</td>
+            <td>0</td>
+            <td>0</td>
+            <td>2005</td>
+            <td>C</td>
+            <td>N</td>
+            <td>130000</td>
+        </tr>
+    </table>
+    
+    <div>
+		<table class="floatLeft" cellspacing="0" rules="all" border="1" id="repRes_ctl00_gvResRefinements" width="50%">
+			<tr>
+				<th scope="col">Refinement</th><th scope="col">Description</th>
+			</tr><tr class="TableRowStyle">
+				<td>Foundation               </td><td>SLAB</td>
+			</tr><tr class="TableAlternatingRowStyle">
+				<td>Roof Type</td><td>GABLE W/ COMP. SHGL.</td>
+			</tr><tr class="TableRowStyle">
+				<td>HVAC</td><td>HEAT WITH A/C</td>
+			</tr>
+		</table>
+	</div>
+    
+    <div>
+		<table class="floatLeft" cellspacing="0" rules="all" border="1" id="repRes_ctl00_gvResBuiltIns" width="50%">
+			<tr>
+				<th scope="col">Built-Ins</th><th scope="col">Units</th>
+			</tr><tr class="TableRowStyle">
+				<td>Full Bath(s)</td><td>1</td>
+			</tr><tr class="TableAlternatingRowStyle">
+				<td>Half Bath(s)</td><td>1</td>
+			</tr><tr class="TableRowStyle">
+				<td>Bedrooms(s)</td><td>1</td>
+			</tr>
+		</table>
+	</div>
+    <br />
+
+    <table align="center" border="1" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td align="center" valign="top">
+                <table align="center" border="0" width="100%">
+                    <tr>
+                        <td class="textCenter">
+            <div>
+		<table cellspacing="0" rules="all" border="1" id="repRes_ctl00_gvResSections">
+			<tr>
+				<th scope="col">Section</th><th scope="col">SqFt</th><th scope="col"># Stories</th>
+			</tr><tr class="TableRowStyle">
+				<td>MANUFACTURED HOUSING</td><td>1120</td><td>1.50</td>
+			</tr><tr class="TableAlternatingRowStyle">
+				<td>DECK</td><td>36</td><td>1.00</td>
+			</tr><tr class="TableRowStyle">
+				<td>DECK</td><td>48</td><td>1.00</td>
+			</tr>
+		</table>
+	</div>
+                        </td>
+                        <td class="textCenter">
+                            <div id='ResCanvas1' class='drawing'><p class='zoom'><a href='PropertyCard_Sketch.aspx?bldgType=Res&bldgNo=1&keepThis=true&TB_iframe=true&width=640&height=500' title='Res Building ID: 1' class='thickbox'><img src='http://template.buncombecounty.org/img/view.gif' alt='Zoom' title='Zoom' width='16' height='16'><br />zoom</a></p></div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script type='text/javascript'>
+var arrXZ74SectStypSket = BuildArray(3,5);
+var SketchCanvas = 'ResSketchCanvas1';
+initSketchVars();
+eval(SketchCanvas=new jsGraphics('ResCanvas1'));
+eval(SketchCanvas.setFont('monospace','15px',Font.BOLD)); // Set font for DrawString()
+eval(SketchCanvas.setPrintable(true));
+BuildSketch('residential');
+function BuildArray(iRows, iCols) {
+    a = MultiDimensionalArray(iRows,iCols);
+a[0][0]='1';
+a[0][1]='MFG';
+a[0][2]='U28R40D28L40';
+a[0][3]='';
+a[1][0]='2';
+a[1][1]='DK';
+a[1][2]='SKPU28R17BGNU6R6D6L6';
+a[1][3]='#CC99CC         ';
+a[2][0]='3';
+a[2][1]='DK';
+a[2][2]='SKPR23D28L16BGND6L8U6R8';
+a[2][3]='#CC99CC         ';
+    return(a);
+}
+</script>
+    
+    
+
+</div>
+
+
+
+<br />
+<p class="textRight" style="padding: 2px 15px 2px 0; color:#000;"><strong><span id="lblTaxYear_Bldg"></span> Total Building Value: <span id="lblBldgValue">130,000</span></strong></p>
+</form>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-11306486-2");
+        pageTracker._trackPageview();
+    } catch (err) { }
+</script>
+</body>
+</html>

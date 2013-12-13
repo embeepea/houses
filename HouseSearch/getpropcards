@@ -1,0 +1,14 @@
+#! /usr/bin/python
+
+# Note: for some reason, getting propcards from www.buncombetax.org with wget (on fog) seems to work,
+# but does not seem to work with curl (on birch) (when done with curl, the page requiring you to accept
+# the terms is returned).  So I ran this on fog.
+
+import re, os
+
+with open('montford.csv', 'r') as f:
+    for line in f.readlines():
+        fields = line.split("|")
+        if len(fields) > 2:
+            pin = fields[1]
+            os.system("wget -O montford-propcards/%s.html 'http://www.buncombetax.org/GIS.aspx?type=card&pin=%s'" % (pin,pin))

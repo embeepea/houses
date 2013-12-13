@@ -1,10 +1,7 @@
-var databaseUrl = "test";
-var collections = ["users", "houses"];
-var db = require("mongojs").connect(databaseUrl, collections);
+#! /usr/local/bin/node
 
-db.houses.find(function(err, houses) {
-    var i;
-    for (i=0; i<houses.length; ++i) {
-        console.log(houses[i]);
-    }
-});
+sprintf = require('sprintf').sprintf;
+
+console.log( sprintf("hey: %3.2f", 3.1415927) );
+
+
